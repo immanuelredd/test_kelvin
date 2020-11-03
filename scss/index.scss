@@ -22,6 +22,15 @@ html {
     margin: 0;
 }
 
+ul {
+    list-style: none;
+    display: flex;
+}
+
+a {
+    text-decoration: none;
+}
+
 body {
     font-family: $font;
     width: 100%;
@@ -43,6 +52,10 @@ body {
 header {
     grid-area: header;
 
+    .overlay {
+        display: none;
+    }
+
     &::before {
         content: '';
         background: url("/static/images/home_ka.jpg");
@@ -54,6 +67,27 @@ header {
         position: absolute;
         top: 0;
         z-index: -1;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-right: 2rem;
+
+        img {
+            width: 6rem;
+            height: 100%;
+        }
+
+        .links {
+            text-transform: uppercase;
+            font-weight: 900;
+
+            li:not(:last-child) {
+                margin-right: 2.5rem;
+            }
+        }
     }
 
 }
