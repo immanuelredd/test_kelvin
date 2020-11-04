@@ -34,6 +34,10 @@ body {
   color: #ffffff;
 }
 
+body.noscroll {
+  overflow: hidden;
+}
+
 .wrapper {
   display: -ms-grid;
   display: grid;
@@ -46,6 +50,7 @@ body {
 }
 
 header {
+  position: relative;
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: header;
@@ -71,6 +76,8 @@ header .overlay {
   background-image: -webkit-gradient(linear, left top, right bottom, from(#000000), to(transparent));
   background-image: linear-gradient(to bottom right, #000000, transparent);
   z-index: 300;
+  -webkit-filter: brightness(70%);
+          filter: brightness(70%);
 }
 
 header .overlay .mobile_links {
@@ -215,10 +222,28 @@ header main {
   width: 80%;
   margin: auto;
   text-align: center;
+  -webkit-transform: translateY(40%);
+          transform: translateY(40%);
+}
+
+@media (min-width: 64rem) {
+  header main {
+    -webkit-transform: translateY(80%);
+            transform: translateY(80%);
+  }
+}
+
+@media (max-width: 29.9375rem) {
+  header main {
+    width: 90%;
+  }
 }
 
 header main h1 {
+  text-transform: uppercase;
+  text-shadow: 2px 2px 2px #000000;
   font-size: 1.5rem;
+  font-weight: 900;
 }
 
 @media (max-width: 29.9375rem) {
@@ -253,5 +278,55 @@ footer {
   grid-area: footer;
   background: #01101f;
   color: #a7a8a8;
+  padding-top: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer img {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 0.1rem solid #a7a8a8;
+  padding: 0.3rem;
+}
+
+footer img:hover {
+  border: none;
+  padding: 0;
+}
+
+footer .footer-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+footer .footer-inner > ul {
+  margin-bottom: 1rem;
+}
+
+footer .footer-inner > ul li {
+  padding: 0 0.5rem;
 }
 /*# sourceMappingURL=index.css.map */

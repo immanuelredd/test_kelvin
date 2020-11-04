@@ -36,6 +36,10 @@ body {
   width: 100%;
   height: 100%;
   color: $cool-white;
+
+  &.noscroll {
+    overflow: hidden;
+  }
 }
 
 .wrapper {
@@ -49,6 +53,7 @@ body {
 }
 
 header {
+  position: relative;
   grid-area: header;
   display: grid;
   grid-template-rows: auto 0.5fr 2.5fr;
@@ -73,6 +78,7 @@ header {
       transparent
     );
     z-index: 300;
+    filter: brightness(70%);
 
     .mobile_links {
       position: absolute;
@@ -184,9 +190,21 @@ header {
     width: 80%;
     margin: auto;
     text-align: center;
+    transform: translateY(40%);
+
+    @include up(large) {
+      transform: translateY(80%);
+    }
+
+    @include down(small) {
+      width: 90%;
+    }
 
     h1 {
+      text-transform: uppercase;
+      text-shadow: 2px 2px 2px $cool-black;
       font-size: 1.5rem;
+      font-weight: 900;
 
       @include down(small) {
         font-size: 1.1rem;
@@ -216,4 +234,38 @@ footer {
   grid-area: footer;
   background: $cool-blue;
   color: $cool-grey;
+  padding-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 0.1rem solid $cool-grey;
+    padding: 0.3rem;
+  }
+
+  img:hover {
+    border: none;
+    padding: 0;
+  }
+
+  .footer-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+
+    > ul {
+      margin-bottom: 1rem;
+      li {
+        padding: 0 0.5rem;
+      }
+    }
+  }
 }
