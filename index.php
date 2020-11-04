@@ -1,4 +1,4 @@
- <?php include("includes/array.php") ?>
+ <?php include("includes/array.php"); ?>
  <!DOCTYPE html>
  <html lang="en">
 
@@ -18,11 +18,21 @@
              </div>
              <nav>
                  <div class="log">
-                     <a href="#"><img src="/static/images/ka_logo2.png" alt=""></a>
+                     <a href="#">
+                         <img src="/static/images/ka_logo2.png" alt="">
+                     </a>
                  </div>
-                 <ul class="links"> <?php include("includes/nav.php"); ?> </ul>
+                 <div class="toggle">
+                     <div class="toggle__harmburg"></div>
+                 </div>
+                 <ul class="links">
+                     <?php include("includes/nav.php"); ?>
+                 </ul>
              </nav>
              <main>
+                 <h1> Kelvin Akparanta is a Nigerian business executive, Media Personality, Brand strategist, Arts
+                     enthusiast, and Philanthropist with over 9 years of professional experience across industries.
+                 </h1>
              </main>
          </header>
          <footer>
@@ -55,13 +65,13 @@
 
              <div class="foot__copyright">
                  <p>
-                     &copy; Copyright
-                     <?php echo date('Y'); ?>
+                     &copy; Copyright <?php echo date('Y'); ?>
                      Kelvin Akparanta All rights reserved.
                  </p>
              </div>
          </footer>
      </div>
+     <script src="/static/js/custom.js"></script>
  </body>
 
  </html>
