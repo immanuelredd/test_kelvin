@@ -40,7 +40,7 @@ body {
       grid-template-columns: 1fr;
   -ms-grid-rows: 4.5fr 1fr;
       grid-template-rows: 4.5fr 1fr;
-      grid-template-areas: 'header' 'footer';
+      grid-template-areas: "header" "footer";
   height: 120vh;
 }
 
@@ -65,7 +65,7 @@ header .overlay {
 }
 
 header::before {
-  content: '';
+  content: "";
   background: url("/static/images/home_ka.jpg");
   background-position: top center;
   background-size: cover;
@@ -104,10 +104,17 @@ header nav .links li:not(:last-child) {
   margin-right: 2.5rem;
 }
 
+@media (max-width: 63.9375rem) {
+  header nav .links {
+    display: none;
+  }
+}
+
 footer {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: footer;
   background: #01101f;
+  color: #a7a8a8;
 }
 /*# sourceMappingURL=index.css.map */
