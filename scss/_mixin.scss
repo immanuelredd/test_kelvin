@@ -1,15 +1,23 @@
-$down: ("small": "29.9375rem", "medium": "47.9375rem", "large": "63.9375rem");
-$up: ("small": "30rem", "medium": "48rem", "large": "64rem");
-
+$down: (
+  "xsmall": "23.475rem",
+  "small": "29.9375rem",
+  "medium": "47.9375rem",
+  "large": "63.9375rem",
+);
+$up: (
+  "small": "30rem",
+  "medium": "48rem",
+  "large": "64rem",
+);
 
 @mixin down($size) {
-    @media (max-width: map-get($down, $size)) {
-        @content;
-    }
+  @media (max-width: map-get($down, $size)) {
+    @content;
+  }
 }
 
 @mixin up($size) {
-    @media (min-width: map-get($up, $size)) {
-        @content;
-    }
+  @media (min-width: map-get($up, $size)) {
+    @content;
+  }
 }

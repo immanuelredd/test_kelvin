@@ -49,7 +49,7 @@ body.noscroll {
   height: 120vh;
 }
 
-header {
+.home {
   position: relative;
   -ms-grid-row: 1;
   -ms-grid-column: 1;
@@ -61,7 +61,7 @@ header {
       grid-template-areas: "overlay" "nav" "main";
 }
 
-header .overlay {
+.home .overlay {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: overlay;
@@ -73,14 +73,12 @@ header .overlay {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: -webkit-gradient(linear, left top, right bottom, from(#000000), to(transparent));
-  background-image: linear-gradient(to bottom right, #000000, transparent);
+  background-image: -webkit-gradient(linear, left bottom, right top, from(#000000), to(transparent));
+  background-image: linear-gradient(to top right, #000000, transparent);
   z-index: 300;
-  -webkit-filter: brightness(70%);
-          filter: brightness(70%);
 }
 
-header .overlay .mobile_links {
+.home .overlay .mobile_links {
   position: absolute;
   top: 16%;
   left: 4%;
@@ -96,7 +94,7 @@ header .overlay .mobile_links {
   z-index: 400;
 }
 
-header .overlay .mobile_links li {
+.home .overlay .mobile_links li {
   padding-top: 2rem;
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
@@ -104,12 +102,12 @@ header .overlay .mobile_links li {
 }
 
 @media (min-width: 48rem) {
-  header .overlay {
+  .home .overlay {
     display: none;
   }
 }
 
-header::before {
+.home::before {
   content: "";
   background: url("/static/images/home_ka.jpg");
   background-position: top center;
@@ -122,7 +120,7 @@ header::before {
   z-index: -1;
 }
 
-header nav {
+.home nav {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: nav;
@@ -140,14 +138,15 @@ header nav {
           align-items: center;
   padding-right: 2rem;
   z-index: 300;
+  padding-top: 0.5rem;
 }
 
-header nav img {
+.home nav img {
   width: 6rem;
   height: 100%;
 }
 
-header nav .toggle {
+.home nav .toggle {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -166,7 +165,7 @@ header nav .toggle {
   margin-right: -1.25rem;
 }
 
-header nav .toggle__harmburg {
+.home nav .toggle__harmburg {
   width: 40px;
   height: 4px;
   background: white;
@@ -174,7 +173,7 @@ header nav .toggle__harmburg {
   transition: all 0.5s ease-in-out;
 }
 
-header nav .toggle__harmburg::before, header nav .toggle__harmburg::after {
+.home nav .toggle__harmburg::before, .home nav .toggle__harmburg::after {
   content: "";
   position: absolute;
   height: 4px;
@@ -184,38 +183,38 @@ header nav .toggle__harmburg::before, header nav .toggle__harmburg::after {
   transition: all 0.5s ease-in-out;
 }
 
-header nav .toggle__harmburg::before {
+.home nav .toggle__harmburg::before {
   -webkit-transform: translateY(-0.75em);
           transform: translateY(-0.75em);
 }
 
-header nav .toggle__harmburg::after {
+.home nav .toggle__harmburg::after {
   -webkit-transform: translateY(0.75em);
           transform: translateY(0.75em);
 }
 
 @media (min-width: 64rem) {
-  header nav .toggle {
+  .home nav .toggle {
     display: none;
   }
 }
 
-header nav .links {
+.home nav .links {
   text-transform: uppercase;
   font-weight: 900;
 }
 
-header nav .links li:not(:last-child) {
+.home nav .links li:not(:last-child) {
   margin-right: 2.5rem;
 }
 
 @media (max-width: 63.9375rem) {
-  header nav .links {
+  .home nav .links {
     display: none;
   }
 }
 
-header main {
+.home main {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: main;
@@ -227,19 +226,18 @@ header main {
 }
 
 @media (min-width: 64rem) {
-  header main {
-    -webkit-transform: translateY(80%);
-            transform: translateY(80%);
+  .home main {
+    margin-top: 25%;
   }
 }
 
 @media (max-width: 29.9375rem) {
-  header main {
+  .home main {
     width: 90%;
   }
 }
 
-header main h1 {
+.home main h1 {
   text-transform: uppercase;
   text-shadow: 2px 2px 2px #000000;
   font-size: 1.5rem;
@@ -247,7 +245,7 @@ header main h1 {
 }
 
 @media (max-width: 29.9375rem) {
-  header main h1 {
+  .home main h1 {
     font-size: 1.1rem;
   }
 }
