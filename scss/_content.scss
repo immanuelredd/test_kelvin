@@ -329,19 +329,35 @@
 }
 
 .media_content {
-  width: 80%;
-  margin: rem auto;
+  margin: 2rem auto;
 
-  .image-gallery {
+  .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    grid-gap: 1rem;
-    grid-auto-flow: dense;
-    padding: 0.5rem;
+    @include up(medium) {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 0.5rem;
+    }
+
+    @include up(large) {
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 0.5rem;
+    }
+  }
+
+  .gallery__item {
+    cursor: pointer;
+    width: 300px;
+
+    @include down(medium) {
+      &:not(:last-child) {
+        margin-bottom: 0.5rem;
+      }
+    }
   }
 
   img {
     width: 300px;
-    height: 100%;
+    height: 350px;
+    object-fit: cover;
   }
 }

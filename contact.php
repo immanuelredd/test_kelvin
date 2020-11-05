@@ -1,4 +1,5 @@
 <?php define('TITLE', 'Contact | Kelvin Akparanta'); ?>
+<?php define('PAGE', 'Home'); ?>
 <?php require_once("config.php"); ?>
 <?php require_once(ROOT_PATH . '/includes/head_section.php');  ?>
 <?php include(ROOT_PATH . '/includes/array.php'); ?>
@@ -14,10 +15,12 @@
 
 
             <main class="contact_main">
-                <h1>
-                    contact me
-                </h1>
-                <p>I will like to hear from you</p>
+                <div>
+                    <h1>
+                        contact me
+                    </h1>
+                    <p>I will like to hear from you</p>
+                </div>
             </main>
 
 

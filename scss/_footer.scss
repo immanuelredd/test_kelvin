@@ -26,13 +26,22 @@ footer {
     justify-content: center;
     align-items: center;
     text-align: center;
-    text-transform: uppercase;
+    text-transform: capitalize;
     margin-bottom: 1rem;
 
     > ul {
       margin-bottom: 1rem;
       li {
         padding: 0 0.5rem;
+      }
+    }
+
+    .site-map {
+      text-transform: uppercase;
+      @include down(small) {
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
       }
     }
   }

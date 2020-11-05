@@ -1,4 +1,5 @@
 <?php define('TITLE', 'Companies | Kelvin Akparanta'); ?>
+<?php define('PAGE', 'Blog'); ?>
 <?php require_once("config.php") ?>
 <?php include(ROOT_PATH . "/includes/array.php"); ?>
 <?php require_once(ROOT_PATH . '/includes/head_section.php');  ?>

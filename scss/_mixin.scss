@@ -21,3 +21,9 @@ $up: (
     @content;
   }
 }
+
+@mixin phone {
+  @media screen and (max-width: 20rem) {
+    @content;
+  }
+}

@@ -38,6 +38,38 @@ body.noscroll {
   overflow: hidden;
 }
 
+#myBtn,
+#myBtn2 {
+  position: fixed;
+  z-index: 99;
+  border: none;
+  /* Remove borders */
+  outline: none;
+  /* Remove outline */
+  background-color: red;
+  /* Set a background color */
+  color: white;
+  /* Text color */
+  cursor: pointer;
+  /* Add a mouse pointer on hover */
+  padding: 10px;
+  /* Some padding */
+  border-radius: 10px;
+  /* Rounded corners */
+  font-size: 18px;
+  /* Increase font size */
+}
+
+#myBtn {
+  bottom: 60px;
+  right: 30px;
+}
+
+#myBtn2 {
+  bottom: 10px;
+  right: 15px;
+}
+
 .wrapper {
   display: -ms-grid;
   display: grid;
@@ -73,8 +105,8 @@ body.noscroll {
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: -webkit-gradient(linear, left bottom, right top, from(#000000), to(transparent));
-  background-image: linear-gradient(to top right, #000000, transparent);
+  background-image: -webkit-gradient(linear, left bottom, right top, color-stop(30%, #000000), to(transparent));
+  background-image: linear-gradient(to top right, #000000 30%, transparent);
   z-index: 300;
 }
 
@@ -95,7 +127,7 @@ body.noscroll {
 }
 
 .home .overlay .mobile_links li {
-  padding-top: 2rem;
+  padding-top: 1rem;
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
   font-weight: 900;
@@ -118,6 +150,8 @@ body.noscroll {
   position: absolute;
   top: 0;
   z-index: -1;
+  -webkit-filter: brightness(75%);
+          filter: brightness(75%);
 }
 
 .home nav {
@@ -218,35 +252,38 @@ body.noscroll {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   grid-area: main;
-  width: 80%;
-  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   text-align: center;
-  -webkit-transform: translateY(40%);
-          transform: translateY(40%);
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 2rem;
 }
 
-@media (min-width: 64rem) {
-  .home main {
-    margin-top: 25%;
-  }
-}
-
-@media (max-width: 29.9375rem) {
+@media (max-width: 47.9375rem) {
   .home main {
     width: 90%;
+    margin-bottom: 0.5rem;
   }
 }
 
 .home main h1 {
   text-transform: uppercase;
   text-shadow: 2px 2px 2px #000000;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   font-weight: 900;
 }
 
 @media (max-width: 29.9375rem) {
   .home main h1 {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
   }
 }
 
@@ -316,7 +353,7 @@ footer .footer-inner {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-  text-transform: uppercase;
+  text-transform: capitalize;
   margin-bottom: 1rem;
 }
 
@@ -326,5 +363,22 @@ footer .footer-inner > ul {
 
 footer .footer-inner > ul li {
   padding: 0 0.5rem;
+}
+
+footer .footer-inner .site-map {
+  text-transform: uppercase;
+}
+
+@media (max-width: 29.9375rem) {
+  footer .footer-inner .site-map {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 /*# sourceMappingURL=index.css.map */

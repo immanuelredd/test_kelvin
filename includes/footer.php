@@ -1,6 +1,6 @@
 <footer>
     <div class="footer-inner">
-        <ul class="foot__social_links">
+        <ul class="social_links">
             <li>
                 <a href="https://web.facebook.com/kelvinkul001?_rdc=1&_rdr">
                     <img src="static/icons/facebook.png" alt="facebook" />
@@ -27,6 +27,10 @@
             </li>
         </ul>
 
+        <ul class="site-map">
+            <?php include(ROOT_PATH . "/includes/nav.php"); ?>
+        </ul>
+
         <div class="foot__copyright">
             <p>
                 &copy; Copyright <?php echo date('Y'); ?>
@@ -34,7 +38,6 @@
             </p>
         </div>
     </div>
-
 </footer>
 </div>
 <script src="/static/js/custom.js"></script>

@@ -1,4 +1,5 @@
  <?php define('TITLE', 'kelvin | Kelvin Akparanta'); ?>
+ <?php define('PAGE', 'Companies'); ?>
  <?php require_once("config.php") ?>
  <?php include(ROOT_PATH . "/includes/array.php"); ?>
  <?php require_once(ROOT_PATH . '/includes/head_section.php');  ?>

@@ -1,4 +1,5 @@
 <?php define('TITLE', 'Blog | Kelvin Akparanta'); ?>
+<?php define('PAGE', 'Foundation'); ?>
 <?php require_once("config.php"); ?>
 <?php require_once(ROOT_PATH . '/includes/head_section.php');  ?>
 <?php include(ROOT_PATH . '/includes/array.php'); ?>
