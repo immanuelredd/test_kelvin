@@ -19,7 +19,7 @@ harm.addEventListener("click", () => {
 });
 
 window.addEventListener("scroll", () => {
-  if (window.scrollY > 0) {
+  if (window.scrollY > 0 || harmOpen) {
     nav.classList.add("sticky");
   } else {
     nav.classList.remove("sticky");

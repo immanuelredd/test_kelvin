@@ -14,7 +14,7 @@
             <main class="kelvin_main">
                 <h1>
                     in 2015, he started Box411, where he currently provides strategic leadership as the executive
-                    director of afric's aspiring no1 agency in branding and digigtal marketing operation in nigeria.
+                    director of africa's aspiring no1 agency in branding and digigtal marketing operation in nigeria.
                 </h1>
             </main>
         </header>

@@ -11,9 +11,9 @@
     <div class="wrapper">
         <header class="books">
             <?php include(ROOT_PATH . "/includes/header.php"); ?>
-            <main class="foundation_main">
+            <main class="books_main">
                 <h1>
-                    <span> Amber Kelvin Foundation </span> is a non-profit organization dedicated to his daughter, Amber Kelvin. It aims at improving the lives of less privileged children.
+                    Resource Center
                 </h1>
             </main>
         </header>

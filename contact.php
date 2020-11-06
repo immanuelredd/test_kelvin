@@ -27,48 +27,47 @@
 
         </header>
         <section class="content contact_content">
-            <div class="contain">
-                <div class="form">
-                    <form action="" class="form">
-                        <label for="name">Your Name</label>
-                        <input type="text" name="" id="name">
 
-                        <label for="mail">Email</label>
-                        <input type="email" name="" id="email">
+            <div class="inner">
+                <div class="contain">
+                    <div class="form">
+                        <form action="" class="form">
+                            <label for="name">Your Name</label>
+                            <input type="text" name="" id="name">
 
-                        <label for="subject">Subject</label>
-                        <input type="text" name="" id="subject">
+                            <label for="mail">Email</label>
+                            <input type="email" name="" id="email">
 
-                        <label for="message">Your Message</label>
-                        <textarea name="" id="message" cols="30" rows="10"></textarea>
+                            <label for="subject">Subject</label>
+                            <input type="text" name="" id="subject">
 
-                        <input type="button" value="send">
-                    </form>
-                </div>
+                            <label for="message">Your Message</label>
+                            <textarea name="" id="message" cols="30" rows="10"></textarea>
 
-                <div class="address">
-                    <h2>Kelvin Akparanta</h2>
-                    <ul>
-                        <li> <span>Email:</span> kelvinakparanta1@gmail.com </li>
-                        <li> <span>Address:</span> Activecode Business Hub E143 Road 3 Ikota Shopping Complex VGC Lekki Lagos, Nigeria. </li>
-                    </ul>
-                </div>
-
-
-                <!-- <div class="social-media">
-                    <div class="instagram">
-
-                        <blockquote class="instagram-media" data-instgrm-version="7">
-                            <a href="https://www.instagram.com/p/CEttQSEpOYu/"></a>
-                        </blockquote>
-
-                        <script async defer src="//platform.instagram.com/en_US/embeds.js"></script>
+                            <input type="button" value="send">
+                        </form>
                     </div>
-                    <div class="twitter"></div>
-                </div>-->
+
+                    <div class="address">
+                        <h2>Kelvin Akparanta</h2>
+                        <ul>
+                            <li> <span>Email:</span> kelvinakparanta1@gmail.com </li>
+                            <li> <span>Address:</span> Activecode Business Hub E143 Road 3 Ikota Shopping Complex VGC Lekki Lagos, Nigeria. </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="embed">
+                    <div class="twitter">
+                        <a class="twitter-timeline" data-height="600" href="https://twitter.com/Iamkelvinkul?ref_src=twsrc%5Etfw">Tweets by Iamkelvinkul</a>
+                        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    </div>
+                    <div class="instagram">
+                        <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+                        <div class="elfsight-app-1351b887-9964-4396-a5d8-199207c43525"></div>
+                    </div>
+
+                </div>
             </div>
-
-
 
         </section>
         <?php include(ROOT_PATH . '/includes/footer.php'); ?>

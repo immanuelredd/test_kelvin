@@ -38,38 +38,6 @@ body.noscroll {
   overflow: hidden;
 }
 
-#myBtn,
-#myBtn2 {
-  position: fixed;
-  z-index: 99;
-  border: none;
-  /* Remove borders */
-  outline: none;
-  /* Remove outline */
-  background-color: red;
-  /* Set a background color */
-  color: white;
-  /* Text color */
-  cursor: pointer;
-  /* Add a mouse pointer on hover */
-  padding: 10px;
-  /* Some padding */
-  border-radius: 10px;
-  /* Rounded corners */
-  font-size: 18px;
-  /* Increase font size */
-}
-
-#myBtn {
-  bottom: 60px;
-  right: 30px;
-}
-
-#myBtn2 {
-  bottom: 10px;
-  right: 15px;
-}
-
 .wrapper {
   display: -ms-grid;
   display: grid;
@@ -279,7 +247,8 @@ header main h1 {
 }
 
 header .contact_main,
-header .gallery_main {
+header .gallery_main,
+header .books_main {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: start;
@@ -287,15 +256,17 @@ header .gallery_main {
 }
 
 header .contact_main h1,
-header .gallery_main h1 {
+header .gallery_main h1,
+header .books_main h1 {
   font-size: 2rem;
   text-transform: capitalize;
 }
 
 header .contact_main p,
-header .gallery_main p {
+header .gallery_main p,
+header .books_main p {
   font-size: 1.2rem;
-  color: #a7a8a8;
+  color: #d8dada;
 }
 
 .kelvin::before {
@@ -672,35 +643,6 @@ header .gallery_main p {
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
   grid-column-gap: 5rem;
-  /* .social-media {
-      .instagram {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-
-        .instagram-media {
-          max-width: 30rem;
-          height: 30rem;
-
-          @include down(medium) {
-            height: 40rem;
-          }
-        }
-
-        @include up(medium) {
-          width: 80%;
-          margin: 0 auto;
-        }
-
-        @include down(small) {
-          width: 100%;
-        }
-
-        @include down(xsmall) {
-          margin-left: -0.9rem;
-        }
-      }
-    }*/
 }
 
 .contact_content .contain .form {
@@ -789,6 +731,59 @@ header .gallery_main p {
   }
 }
 
+.contact_content .embed {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  grid-gap: 5rem;
+  margin-top: 1rem;
+}
+
+.contact_content .embed .instagram {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contact_content .embed .instagram .instagram-media {
+  height: 30rem;
+}
+
+@media (max-width: 47.9375rem) {
+  .contact_content .embed .instagram .instagram-media {
+    height: 40rem;
+  }
+}
+
+@media (min-width: 48rem) {
+  .contact_content .embed .instagram {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 63.9375rem) {
+  .contact_content .embed {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
 .media_content {
   margin: 2rem auto;
 }
@@ -837,7 +832,7 @@ footer {
   -ms-grid-column: 1;
   grid-area: footer;
   background: #01101f;
-  color: #a7a8a8;
+  color: #d8dada;
   padding-top: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -854,7 +849,7 @@ footer img {
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
-  border: 0.1rem solid #a7a8a8;
+  border: 0.1rem solid #d8dada;
   padding: 0.3rem;
 }
 
@@ -892,18 +887,19 @@ footer .footer-inner > ul li {
 
 footer .footer-inner .site-map {
   text-transform: uppercase;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-@media (max-width: 29.9375rem) {
-  footer .footer-inner .site-map {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
+footer .footer-inner .site-map li a:hover {
+  color: #ff0000;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 /*# sourceMappingURL=style.css.map */

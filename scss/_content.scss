@@ -290,35 +290,37 @@
       }
     }
 
-    /* .social-media {
-      .instagram {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+    @include down(large) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
 
-        .instagram-media {
-          max-width: 30rem;
-          height: 30rem;
+  .embed {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 5rem;
+    margin-top: 1rem;
 
-          @include down(medium) {
-            height: 40rem;
-          }
-        }
+    .instagram {
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-        @include up(medium) {
-          width: 80%;
-          margin: 0 auto;
-        }
+      .instagram-media {
+        height: 30rem;
 
-        @include down(small) {
-          width: 100%;
-        }
-
-        @include down(xsmall) {
-          margin-left: -0.9rem;
+        @include down(medium) {
+          height: 40rem;
         }
       }
-    }*/
+
+      @include up(medium) {
+        width: 80%;
+        margin: 0 auto;
+      }
+    }
 
     @include down(large) {
       display: flex;
