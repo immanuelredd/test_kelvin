@@ -1,0 +1,53 @@
+$down: (
+  "xsmall": "23.475rem",
+  "small": "29.9375rem",
+  "medium": "47.9375rem",
+  "large": "63.9375rem",
+);
+$up: (
+  "small": "30rem",
+  "medium": "48rem",
+  "large": "64rem",
+);
+
+@mixin down($size) {
+  @media (max-width: map-get($down, $size)) {
+    @content;
+  }
+}
+
+@mixin up($size) {
+  @media (min-width: map-get($up, $size)) {
+    @content;
+  }
+}
+
+@mixin phone {
+  @media screen and (max-width: 20rem) {
+    @content;
+  }
+}
+
+@mixin adminPhone {
+  @media screen and (max-width: 26.5625rem) {
+    @content;
+  }
+}
+
+@mixin height_phone {
+  @media screen and (max-height: 51.4375rem) and (min-height: 35.5rem) and (max-width: 29.9375rem) and (min-width: 20rem) {
+    @content;
+  }
+}
+
+@mixin ipad_pro {
+  @media screen and (max-height: 85.375rem) and (min-height: 64rem) {
+    @content;
+  }
+}
+
+@mixin blog {
+  @media screen and (max-width: 47.9375rem) and (min-width: 26.5625rem) {
+    @content;
+  }
+}

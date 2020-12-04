@@ -1,0 +1,417 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+@import "mixin";
+@import "global";
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 100vh 1fr auto;
+  grid-template-areas:
+    "header"
+    "content"
+    "footer";
+
+  @include down(medium) {
+    grid-template-rows: 80vh 1fr auto;
+  }
+}
+.contain {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 60vh 1fr auto;
+  grid-template-areas:
+    "header"
+    "content"
+    "footer";
+}
+
+header {
+  position: relative;
+  grid-area: header;
+  display: grid;
+  grid-template-rows: auto 0.5fr 2.5fr;
+  grid-template-areas:
+    "overlay"
+    "nav"
+    "main";
+
+  .overlay {
+    grid-area: overlay;
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(
+      to top right,
+      $cool-black 30%,
+      transparent
+    );
+    z-index: 300;
+
+    .mobile_links {
+      position: absolute;
+      top: 16%;
+      left: 4%;
+      transform: translate(10%, 4%);
+      display: flex;
+      flex-direction: column;
+      z-index: 400;
+
+      li {
+        padding-top: 1rem;
+        font-family: $font;
+        text-transform: uppercase;
+        font-weight: 900;
+      }
+    }
+
+    @include up(medium) {
+      display: none;
+    }
+  }
+
+  nav {
+    grid-area: nav;
+    position: fixed;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 2rem;
+    z-index: 300;
+    padding-top: 0.5rem;
+
+    img {
+      width: 6rem;
+      height: 100%;
+    }
+
+    .toggle {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 80px;
+      height: 80px;
+      cursor: pointer;
+      transition: all 5s ease-in-out;
+      margin-right: -1.25rem;
+
+      &__harmburg {
+        width: 40px;
+        height: 4px;
+        background: white;
+        transition: all 0.5s ease-in-out;
+
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          height: 4px;
+          width: 40px;
+          background: white;
+          transition: all 0.5s ease-in-out;
+        }
+
+        &::before {
+          transform: translateY(-0.75em);
+        }
+
+        &::after {
+          transform: translateY(0.75em);
+        }
+      }
+
+      @include up(large) {
+        display: none;
+      }
+    }
+
+    .links {
+      text-transform: uppercase;
+      font-weight: 900;
+
+      li:not(:last-child) {
+        margin-right: 2.5rem;
+      }
+
+      @include down(large) {
+        display: none;
+      }
+    }
+  }
+  main {
+    grid-area: main;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+
+    @include down(medium) {
+      width: 90%;
+      margin-bottom: 0.5rem;
+    }
+
+    h1 {
+      text-transform: uppercase;
+      text-shadow: 2px 2px 2px $cool-black;
+      font-size: 1.1rem;
+      font-weight: 900;
+
+      @include down(small) {
+        font-size: 0.9rem;
+      }
+    }
+  }
+  .contact_main,
+  .gallery_main,
+  .books_main,
+  .single_main {
+    justify-content: start;
+    text-align: left;
+
+    @include down(medium) {
+      margin-bottom: 20%;
+    }
+
+    @include height_phone {
+      align-items: center;
+      margin-top: 50%;
+    }
+
+    @include ipad_pro {
+      align-items: center;
+      margin-top: 30%;
+    }
+
+    h1 {
+      //margin-top: 0.5rem;
+      font-size: 2rem;
+      text-transform: capitalize;
+
+      @include ipad_pro {
+        font-size: 4rem;
+      }
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: $cool-grey;
+    }
+  }
+  .kelvin_main,
+  .foundation_main {
+    @include down(medium) {
+      margin-bottom: 30%;
+    }
+
+    @include height_phone {
+      align-items: center;
+      margin-top: 50%;
+    }
+
+    @include ipad_pro {
+      align-items: center;
+      margin-top: 30%;
+    }
+
+    h1 {
+      @include ipad_pro {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .blog_main {
+    display: block;
+    margin-top: 20%;
+    transform: translateY(40%);
+    text-align: left;
+
+    .login_register {
+      .header {
+        h2 {
+          text-shadow: 2px 2px 2px $cool-black;
+        }
+      }
+
+      a {
+        display: inline-block;
+        padding: 0.5rem;
+        background-color: $cool-grey;
+        text-transform: uppercase;
+        color: $cool-black;
+        margin: 0.5rem;
+        transition: all 0.5s ease-in-out;
+        font-weight: 700;
+
+        @include ipad_pro {
+          font-size: 1.2rem;
+        }
+      }
+
+      a:hover {
+        background-color: $cool-red;
+        color: $cool-white;
+      }
+    }
+
+    @include down(medium) {
+      margin-bottom: 30%;
+    }
+
+    @include height_phone {
+      align-items: center;
+      margin-top: 50%;
+    }
+
+    @include ipad_pro {
+      align-items: center;
+      margin-top: 30%;
+    }
+
+    h1 {
+      @include ipad_pro {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .business_main {
+    @include height_phone {
+      align-items: center;
+      margin-top: 80%;
+    }
+
+    @include ipad_pro {
+      align-items: center;
+      margin-top: 50%;
+    }
+
+    h1 {
+      @include ipad_pro {
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+.single {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.kelvin {
+  &::before {
+    content: "";
+    background: url("../../public/images/KelvinAkparanta-Home.jpg");
+  }
+}
+
+.business {
+  &::before {
+    content: "";
+    background: url("../../public/images/KelvinAkparanta-Company.jpg");
+  }
+}
+
+.blog {
+  &::before {
+    content: "";
+    background: url("../../public/images/KelvinAkparanta-Blog.jpeg");
+  }
+}
+
+.foundation {
+  &::before {
+    content: "";
+    background: url("../../public/images/KelvinAkparanta-Foundation.jpg");
+  }
+}
+
+.books {
+  &::before {
+    content: "";
+    background: url("../../public/images/KelvinAkparanta-books.jpg");
+  }
+}
+
+.media {
+  &::before {
+    content: "";
+    background: url("../../public/images/KelvinAkparanta-Company.jpg");
+  }
+}
+
+.contact {
+  &::before {
+    content: "";
+    background: url("../../public/images/KelvinAkparanta-Contact.jpg");
+  }
+}
+
+.kelvin,
+.business,
+.blog,
+.foundation,
+.books,
+.media,
+.contact {
+  &::before {
+    content: "";
+    //background: url("/static/images/home_ka.jpg");
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    filter: brightness(75%);
+
+    @include down(medium) {
+      height: 80vh;
+    }
+  }
+}
+
+.sticky {
+  background-color: rgba(0, 0, 0, 0.9);
+  transition: all 1s ease-in-out;
+}
+
+.toggle.open .toggle__harmburg {
+  background-color: transparent;
+}
+
+.toggle.open .toggle__harmburg::before {
+  transform: rotate(45deg);
+}
+
+.toggle.open .toggle__harmburg::after {
+  transform: rotate(-45deg);
+}
+
+.msg {
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.success {
+  background-color: $cool-green;
+}
+.error {
+  background-color: $cool-red;
+}
+
+@import "content";
+@import "footer";

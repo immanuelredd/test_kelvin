@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
+@import "mixin";
+@import "global";
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 4.5fr 1fr;
+  grid-template-areas:
+    "header"
+    "footer";
+  height: 120vh;
+}
+
+.home {
+  position: relative;
+  grid-area: header;
+  display: grid;
+  grid-template-rows: auto 0.5fr 2.5fr;
+  grid-template-areas:
+    "overlay"
+    "nav"
+    "main";
+
+  .overlay {
+    grid-area: overlay;
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(
+      to top right,
+      $cool-black 30%,
+      transparent
+    );
+    z-index: 300;
+
+    .mobile_links {
+      position: absolute;
+      top: 16%;
+      left: 4%;
+      transform: translate(10%, 4%);
+      display: flex;
+      flex-direction: column;
+      z-index: 400;
+
+      li {
+        padding-top: 1rem;
+        font-family: $font;
+        text-transform: uppercase;
+        font-weight: 900;
+      }
+    }
+
+    @include up(medium) {
+      display: none;
+    }
+  }
+
+  &::before {
+    content: "";
+    background: url("../../public/images/KelvinAkparanta-Home.jpg");
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    filter: brightness(75%);
+  }
+
+  nav {
+    grid-area: nav;
+    position: fixed;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 2rem;
+    z-index: 300;
+    padding-top: 0.5rem;
+
+    img {
+      width: 6rem;
+      height: 100%;
+    }
+
+    .toggle {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 80px;
+      height: 80px;
+      cursor: pointer;
+      transition: all 5s ease-in-out;
+      margin-right: -1.25rem;
+
+      &__harmburg {
+        width: 40px;
+        height: 4px;
+        background: white;
+        transition: all 0.5s ease-in-out;
+
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          height: 4px;
+          width: 40px;
+          background: white;
+          transition: all 0.5s ease-in-out;
+        }
+
+        &::before {
+          transform: translateY(-0.75em);
+        }
+
+        &::after {
+          transform: translateY(0.75em);
+        }
+      }
+
+      @include up(large) {
+        display: none;
+      }
+    }
+
+    .links {
+      text-transform: uppercase;
+      font-weight: 900;
+
+      li:not(:last-child) {
+        margin-right: 2.5rem;
+      }
+
+      @include down(large) {
+        display: none;
+      }
+    }
+  }
+  main {
+    grid-area: main;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+
+    @include down(medium) {
+      width: 90%;
+      margin-bottom: 0.5rem;
+    }
+
+    @include height_phone {
+      align-items: center;
+      margin-top: 50%;
+    }
+
+    @include ipad_pro {
+      align-items: center;
+      margin-top: 30%;
+    }
+
+    h1 {
+      text-transform: uppercase;
+      text-shadow: 2px 2px 2px $cool-black;
+      font-size: 1.1rem;
+      font-weight: 900;
+
+      @include down(small) {
+        font-size: 0.9rem;
+      }
+
+      @include ipad_pro {
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+.sticky {
+  background-color: rgba(0, 0, 0, 0.9);
+  transition: 1s ease-in-out;
+}
+
+.toggle.open .toggle__harmburg {
+  background-color: transparent;
+}
+
+.toggle.open .toggle__harmburg::before {
+  transform: rotate(45deg);
+}
+
+.toggle.open .toggle__harmburg::after {
+  transform: rotate(-45deg);
+}
+
+@import "footer";

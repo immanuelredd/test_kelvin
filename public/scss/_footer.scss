@@ -1,0 +1,51 @@
+footer {
+  grid-area: footer;
+  background: $cool-blue;
+  color: $cool-grey;
+  padding-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 0.1rem solid $cool-grey;
+    padding: 0.3rem;
+  }
+
+  img:hover {
+    border: none;
+    padding: 0;
+  }
+
+  .footer-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+
+    > ul {
+      margin-bottom: 1rem;
+      li {
+        padding: 0 0.5rem;
+      }
+    }
+
+    .site-map {
+      text-transform: uppercase;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+
+      li a:hover {
+        color: $cool-red;
+        transition: all 0.1s ease-in-out;
+      }
+    }
+  }
+}
